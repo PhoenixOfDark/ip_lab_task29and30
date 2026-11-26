@@ -401,8 +401,9 @@
 }
 
 
-/* Welcome modal */
-body.modal-open
+/* Welcome and subscribe modals */
+body.modal-open,
+body.subscribe-open
 {
     overflow: hidden;
 }
@@ -605,6 +606,23 @@ body.modal-open
 {
     outline: 2px solid #16a085;
     outline-offset: 4px;
+}
+
+.subscribe-modal__success
+{
+    margin: 0;
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: #eaf7f3;
+    color: #13876f;
+    font: 400 15px/24px 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.subscribe-modal__success:focus-visible
+{
+    outline: 2px solid #16a085;
+    outline-offset: 2px;
 }
 
 @keyframes welcomeOverlayIn

@@ -147,7 +147,7 @@
                 <p class="promo_subtitle">
                     В рассылке мы сообщаем о наших акциях и специальных предложениях. <br>Вы можете получать эту информацию из первых рук.
                 </p>
-                <button class="success_button">Подписаться</button>
+                <button class="success_button" id="subscribeButton" type="button" aria-haspopup="dialog" aria-controls="subscribeModal">Подписаться</button>
             </div>
         </div>
         
@@ -185,8 +185,27 @@
             </div>
         </div>
 
+        <div class="welcome-modal subscribe-modal" id="subscribeModal" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle" aria-describedby="subscribeModalText" hidden>
+            <div class="welcome-modal__overlay" id="subscribeOverlay"></div>
+            <div class="welcome-modal__dialog" id="subscribeDialog" role="document">
+                <button class="welcome-modal__close" type="button" aria-label="Закрыть окно" data-subscribe-close>&times;</button>
+                <p class="welcome-modal__brand">Selly Hotels</p>
+                <h2 class="welcome-modal__title" id="subscribeModalTitle">Подпишитесь на новости</h2>
+                <p class="welcome-modal__text" id="subscribeModalText">Оставьте свою почту — будем присылать только важные новости, акции и специальные предложения.</p>
+                <form class="welcome-modal__form" id="subscribeForm" novalidate>
+                    <label class="welcome-modal__label" for="subscribeEmail">Ваш e-mail</label>
+                    <input class="welcome-modal__input" id="subscribeEmail" name="subscribeEmail" type="email" inputmode="email" placeholder="Например, anna@mail.ru" autocomplete="email" required>
+                    <p class="welcome-modal__error" id="subscribeEmailError" role="alert" hidden>Пожалуйста, введите корректный e-mail</p>
+                    <button class="welcome-modal__submit" type="submit">Подписаться</button>
+                    <button class="welcome-modal__skip" type="button" data-subscribe-close>Закрыть</button>
+                </form>
+                <p class="subscribe-modal__success" id="subscribeSuccess" role="status" tabindex="-1" hidden>Спасибо! Вы подписались на новости Selly Hotels.</p>
+            </div>
+        </div>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/scroll-top.js"></script>
+        <script src="js/subscribe.js"></script>
     </body>
 </html>
